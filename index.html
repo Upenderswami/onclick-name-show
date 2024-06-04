@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print Name</title>
+    <style>
+    button
+    {
+        background-color: blue;
+        color: white;
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+    </style>
+</head>
+<body>
+    <button id="btn" onclick="show()">Print Name</button>
+    <p id="show"></p>
+
+    <script>
+
+    const names = ['anand', 'sonu', 'upender', 'gajender','rupender'];
+    function show() {
+        names.sort(() => Math.random() - 0.5);
+        let set = 0;
+        const so = setInterval(() => {
+            if (set < names.length) {
+                document.getElementById('show').textContent += names[set] + ' ';
+                set++;
+            } else {
+                clearInterval(so); 
+            }
+        }, 1000);
+    }
+   
+    </script>
+</body>
+</html>
